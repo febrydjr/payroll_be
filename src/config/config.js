@@ -1,5 +1,6 @@
 const path = require("path");
 require("dotenv").config({ path: path.resolve(__dirname, "../../.env") });
+import mysql2 from "mysql2";
 
 module.exports = {
   development: {
@@ -9,6 +10,7 @@ module.exports = {
     host: process.env.DB_HOST,
     port: process.env.DB_PORT,
     dialect: "mysql",
+    dialectModule: mysql2,
     dialectOptions: {
       ssl: {
         ca: process.env.DB_CA,
@@ -24,6 +26,7 @@ module.exports = {
     host: process.env.DB_HOST,
     port: process.env.DB_PORT,
     dialect: "mysql",
+    dialectModule: mysql2,
     dialectOptions: {
       ssl: {
         ca: process.env.DB_CA,
@@ -39,6 +42,7 @@ module.exports = {
     host: process.env.DB_HOST,
     port: process.env.DB_PORT,
     dialect: "mysql",
+    dialectModule: mysql2,
     dialectOptions: {
       ssl: {
         ca: process.env.DB_CA,
